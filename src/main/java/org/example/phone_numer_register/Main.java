@@ -13,7 +13,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("app.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 720, 480);
         // scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
-        stage.setTitle("Hello!");
+        stage.setTitle("PhoneBook App Ver_2.1");
         stage.setScene(scene);
         stage.show();
     }
