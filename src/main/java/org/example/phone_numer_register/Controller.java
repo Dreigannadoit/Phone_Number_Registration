@@ -7,10 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-
-import java.math.BigInteger;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,6 +40,7 @@ public class Controller implements Initializable, UserInputs {
         // allow user to select multiple rows
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
+
     @Override
     public void addColumn() {
         Person newPerson = new Person(firstNameTextField.getText(),
@@ -62,9 +59,9 @@ public class Controller implements Initializable, UserInputs {
 
         if (!selectedRows.isEmpty()) {
             selectedPerson = selectedRows.get(0); // Assuming only one row can be edited at a time
-            firstNameTextField.setText(selectedPerson.getFirstName().toString());
-            lastNameTextField.setText(selectedPerson.getLastName().toString());
-            phoneNumField.setText(selectedPerson.getPhoneNum().toString());
+            firstNameTextField.setText(selectedPerson.getFirstName());
+            lastNameTextField.setText(selectedPerson.getLastName());
+            phoneNumField.setText(selectedPerson.getPhoneNum());
         }
     }
 
@@ -99,10 +96,9 @@ public class Controller implements Initializable, UserInputs {
         phoneNumField.setText("");
     }
 
-    public ObservableList<Person> getPeople()
-    {
+    public ObservableList<Person> getPeople() {
         ObservableList<Person> people = FXCollections.observableArrayList();
-        people.add(new Person("Rebecca", "Fergusson", "0502115825"));
+        people.add(new Person("Test FirstName", "TestLastName", "0502115825"));
         people.add(new Person("John", "Doe", "23904720345"));
 
         return people;
