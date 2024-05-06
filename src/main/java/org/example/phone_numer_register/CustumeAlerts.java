@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import java.math.BigInteger;
 
 public class CustumeAlerts {
-    public Alert checkEmptyInput(Person selectedPerson,  TextField firstNameTextField, TextField lastNameTextField, TextField phoneNumField) {
+    public void checkEmptyInput(Person selectedPerson, TextField firstNameTextField, TextField lastNameTextField, TextField phoneNumField) {
         // Check if selectedPerson is null or any of the text fields are empty
         if (
                 ( selectedPerson == null && firstNameTextField.getText().isEmpty() ) ||
@@ -22,13 +22,11 @@ public class CustumeAlerts {
             alert.setHeaderText(null);
             alert.setContentText("Please fill in all fields.");
             alert.showAndWait();
-            return alert; // Exit the method
         }
 
-        return null;
     }
 
-    public Alert checkInvalidMobileNum(TextField phoneNumField) {
+    public void checkInvalidMobileNum(TextField phoneNumField) {
         // Check if the phone number is a valid BigInteger
         try {
             new BigInteger(phoneNumField.getText());
@@ -39,9 +37,7 @@ public class CustumeAlerts {
             alert.setHeaderText(null);
             alert.setContentText("Phone number must be a valid number.");
             alert.showAndWait();
-            return alert;// Exit the method
         }
 
-        return null;
     }
 }
