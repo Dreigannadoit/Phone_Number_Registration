@@ -19,7 +19,13 @@ Todo:
 - Change Mobile Number to operate only through int value
 - Number and non-Alphabetic character detector in First name and Last name Input field 
 
+## Version 2
+![Version 2.1](https://raw.githubusercontent.com/Dreigannadoit/Photos/main/06_05_2024.png "Version 2.1")
 
+Fixed:
+- Only selected rows get deleted
+- Delete method tries to remove items from an empty list
+- Change Mobile Number to operate only through int value
 
 
 

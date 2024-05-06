@@ -4,12 +4,13 @@ import javafx.beans.property.SimpleStringProperty;
 import java.math.BigInteger;
 
 public class Person {
-    private SimpleStringProperty firstName, lastName, phoneNum;
+    private SimpleStringProperty firstName, lastName;
+    private BigInteger phoneNum;
 
     public Person(String firstName, String lastName, String phoneNum) {
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
-        this.phoneNum = new SimpleStringProperty(phoneNum);
+        this.phoneNum = new BigInteger(phoneNum);
     }
 
     public String getFirstName() {
@@ -28,11 +29,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getPhoneNum() {
-        return phoneNum.get();
+    public BigInteger getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setPhoneNum(SimpleStringProperty phoneNum) {
+    public void setPhoneNum(BigInteger phoneNum) {
         this.phoneNum = phoneNum;
     }
 
